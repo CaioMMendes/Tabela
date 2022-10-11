@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <link href="aula6.css" rel="stylesheet">
+    <script type="text/javascript" src="aula6.js"></script>
+    <title>
+        Imersão Dev - Aula 06
+    </title>
+</head>
+
+<body>
+    <h1>Tabela de classificação</h1>
+
+    <table style="width:100%">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Vitórias</th>
+                <th>Empates</th>
+                <th>Derrotas</th>
+                <th>Pontos</th>
+                <th>Vencedor</th>
+
+                <th colspan="3">Ações</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaJogadores">
+
+
+        </tbody>
+    </table>
+
+    <div class="botões">
+        <input type="array" id="nomeJogador" size="25" placeholder="Nome Jogador"
+            onkeypress="return searchKeyPress(event);" /><br>
+
+    </div>
+
+    <button type="submit" id="cadastrar" onclick="cadastrarJogadores()">Cadastrar</button>
+    <button type="submit" onclick="ganhador()">Vencedor</button><br>
+    <br>
+    <button type="submit" onclick="zerarTudo()">Zerar</button>
+
+    <script>
+        //Faz com que ao apertar enter pressione o botão
+        function searchKeyPress(e) {
+            // look for window.event in case event isn't passed in
+            e = e || window.event;
+            if (e.keyCode == 13) {
+                document.getElementById('cadastrar').click();
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>
